@@ -1,0 +1,19 @@
+{
+  "name": "ipr2_schaefer_tilegant",
+  "version": "0.0.1",
+  "description": "Node server for B2-IPR",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshelboy/ipr2.git"
+  },
+  "author": "Elias Tilegant",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshelboy/ipr2/issues"
+  },
+  "homepage": "https://github.com/joshelboy/ipr2#readme"
+}
