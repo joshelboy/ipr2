@@ -2,14 +2,22 @@ Teammitglieder: Elias Tilgant
 
 ---
 
-Aufgabenblatt: B2
+# Aufgabenblatt: B2
 =================
 
 --------------------
-zum Starten der Webseite:
-    (1.) in der Konsole mit "cd" in den Ordner der index.html navigieren
-    (2.) python -m http.server 433 eingeben
-    (3.) im Bowser den Tab "localhost:433" öffnen
+## zum Starten der Webseite:
+
+-   in den Ordner "ipr" Navigieren (index.html! muss vorhanden sein!)
+
+-   via python3 (<- Es muss Python 3 sein) mit dem Modul http.server simplen http server starten.
+-   im browser localhost:8000 aufrufen und jegliche Blocker (uBlock...) deaktivieren!
+
+```bash
+python -m http.server 433 #optional kann 433 weggelassen werden, dann ist der port 8000
+```
+Achtung, je nach ENV Deklaration kann dieser befehl auch python3 heißen!
+Eine VENV ist nicht notwendig
 
 Begründung für diesen Weg: CORS-Probleme umgehen
 
