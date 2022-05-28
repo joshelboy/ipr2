@@ -1,5 +1,5 @@
 import { locate } from "./iss.js";
-import { draw_marker, render } from "./osm.js";
+import { draw_history, draw_marker, render } from "./osm.js";
 
 function initial(){
     console.log("If you can see this you are truly a developer! Or trying to find vulnerabilities")
@@ -8,7 +8,10 @@ function initial(){
 }
 
 function second(){
-    locate().then((res) => draw_marker(res.latitude, res.longitude));
+    locate().then((res) => {
+        draw_history(res.latitude, res.longitude);
+        draw_marker(res.latitude, res.longitude);
+    });
 }
 
 initial()
