@@ -1,3 +1,5 @@
+//Teammitglieder: Elias Tilegant, Benjamin Schäfer
+
 import { locate } from "./iss.js";
 import { get_weather } from "./meteo.js";
 import { draw_history, draw_marker, render } from "./osm.js";
