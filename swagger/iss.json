@@ -1,0 +1,114 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "wheretheiss",
+    "description": "where the iss at",
+    "version": "0.1"
+  },
+  "servers": [
+    {
+      "url": "hhttps://api.wheretheiss.at/",
+      "description": "wheretheiss"
+    }
+  ],
+  "tags": [
+    {
+      "name": "loction",
+      "description": "Get the current iss location"
+    }
+  ],
+  "paths": {
+    "/v1/satellites/25544": {
+      "get": {
+        "tags": [
+          "loction"
+        ],
+        "summary": "get loction of ISS",
+        "responses": {
+          "200": {
+            "description": "loction of the ISS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Location"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "xml": {
+                    "name": "location",
+                    "wrapped": true
+                  },
+                  "items": {
+                    "$ref": "#/components/schemas/Location"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Site not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Location": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "latitude": {
+            "type": "number"
+          },
+          "longitude": {
+            "type": "number"
+          },
+          "altitude": {
+            "type": "number"
+          },
+          "velocity": {
+            "type": "number"
+          },
+          "visibility": {
+            "type": "string"
+          },
+          "footprint": {
+            "type": "number"
+          },
+          "timestamp": {
+            "type": "integer"
+          },
+          "daynum": {
+            "type": "number"
+          },
+          "solar_lat": {
+            "type": "number"
+          },
+          "solar_lon": {
+            "type": "number"
+          },
+          "units": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
