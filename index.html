@@ -78,24 +78,6 @@
                 https://leafletjs.com/
             -->
 
-<<<<<<< HEAD
-=======
-            <script>
-                var apiUrl = 'https://api.wheretheiss.at/v1/satellites/25544';
-                fetch(apiUrl).then(response => {
-                return response.json();
-                }).then(data => {
-                // Work with JSON data here
-                console.log(data);
-                document.getElementById('latitude').innerHTML = data.latitude;
-                document.getElementById('longitude').innerHTML = data.longitude;
-                }).catch(err => {
-                // Do something for an error here
-                document.getElementById('latitude').innerHTML = 'Can not get the data.';
-                document.getElementById('longitude').innerHTML = 'Can not get the data.';
-                });
-            </script>
->>>>>>> 8227014f0cc23d1e2bae20889310d983a5322283
         </div>
 
     </body>
