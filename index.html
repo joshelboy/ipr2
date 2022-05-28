@@ -4,6 +4,7 @@
         <title>WITISSPPG</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="refresh" content="10">
         <link rel="stylesheet" href="./src/css/style.css">
 
         <!--Bootstrap 5-->
@@ -62,6 +63,8 @@
                 document.getElementById('longitude').innerHTML = data.longitude;
                 }).catch(err => {
                 // Do something for an error here
+                document.getElementById('latitude').innerHTML = 'Can not get the data.';
+                document.getElementById('longitude').innerHTML = 'Can not get the data.';
                 });
             </script>
         </div>
