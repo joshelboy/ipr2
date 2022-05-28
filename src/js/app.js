@@ -2,7 +2,13 @@ import { locate } from "./iss.js";
 import { get_weather } from "./meteo.js";
 import { draw_history, draw_marker, render } from "./osm.js";
 
-function draw(){
+function initial(){
+    console.log("If you can see this you are truly a developer! Or trying to find vulnerabilities")
+    render();
+    refresh();
+}
+
+function refresh(){
     locate().then((res) => {
         let latitude = res.latitude;
         let longitude = res.longitude;
@@ -12,16 +18,6 @@ function draw(){
         draw_marker(latitude, longitude);
         get_weather(latitude, longitude, altitude)
     });
-}
-
-function initial(){
-    console.log("If you can see this you are truly a developer! Or trying to find vulnerabilities")
-    render();
-    draw();
-}
-
-function refresh(){
-    draw();
 }
 
 initial()
