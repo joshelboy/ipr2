@@ -1,3 +1,5 @@
+//Teammitglieder: Elias Tilegant, Benjamin Schäfer
+
 var marker;
 var map = L.map('map').setView([40.736111, 34.473889], 2); //"Center" of the world
 var pointList = [];

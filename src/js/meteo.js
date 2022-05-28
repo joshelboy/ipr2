@@ -1,3 +1,5 @@
+//Teammitglieder: Elias Tilegant, Benjamin Schäfer
+
 export function get_weather(latitude, longitude, height){
     try{
         return new Promise((resolve, reject) => {

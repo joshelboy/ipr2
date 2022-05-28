@@ -1,3 +1,5 @@
+//Teammitglieder: Elias Tilegant, Benjamin Schäfer
+
 export function locate(){
     try{
         return new Promise((resolve, reject) => {
