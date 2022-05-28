@@ -8,8 +8,10 @@ export function get_weather(latitude, longitude, height){
                 let temperature = data.current_weather.temperature;
                 let temp_height = data.elevation;
                 height = height - temp_height;
+                height = height / 1000;
+                height = height.toFixed(2)
 
-                document.getElementById('height').innerHTML = height.toFixed(2) / 1000;
+                document.getElementById('height').innerHTML = height;
                 document.getElementById('weather').innerHTML = temperature;
                 resolve(data);
             }).catch(err => {

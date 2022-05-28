@@ -34,8 +34,8 @@ export function draw_history(latitude, longitude){
         line.remove(map);
     }
 
-    //If data record hits 10 minute limit (1 Call every 10 seconds == 6 Calls per Minute * 10 = 60)
-    if (pointList.length == 60){
+    //If data record hits 240 minute limit (1 Call every 10 seconds == 6 Calls per Minute * 10 * 6 *4 = 1440)
+    if (pointList.length == 1440){
         pointList.shift();
     }
     

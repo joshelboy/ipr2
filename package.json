@@ -1,7 +1,7 @@
 {
   "name": "ipr2_schaefer_tilegant",
   "version": "0.0.1",
-  "description": "Node server for B2-IPR",
+  "description": "IPR-A2",
   "main": "app.js",
   "scripts": {
     "test": "test"

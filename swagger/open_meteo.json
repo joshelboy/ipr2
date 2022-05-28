@@ -1,0 +1,139 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenMeteo",
+    "description": "Elias Tilegant",
+    "version": "0.1"
+  },
+  "servers": [
+    {
+      "url": "https://api.open-meteo.com/",
+      "description": "OpenMeteo"
+    }
+  ],
+  "tags": [
+    {
+      "name": "weather",
+      "description": "Get current weather below (or close) to the current ISS location"
+    }
+  ],
+  "paths": {
+    "/v1/forecast": {
+      "get": {
+        "tags": [
+          "weather"
+        ],
+        "summary": "Get weather",
+        "parameters": [
+          {
+            "name": "latitude",
+            "in": "query",
+            "description": "Geographical WGS84 coordiante of the location",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "longitude",
+            "in": "query",
+            "description": "Geographical WGS84 coordiante of the location",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "current_weather",
+            "in": "query",
+            "description": "Should the current weather be returned?",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean",
+                "default": true,
+                "enum": [
+                  true,
+                  false
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Weather at given location",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/weather"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "weather": {
+        "type": "object",
+        "properties": {
+          "longitude": {
+            "type": "number"
+          },
+          "latitude": {
+            "type": "number"
+          },
+          "current_weather": {
+            "$ref": "#/components/schemas/weather_current_weather"
+          },
+          "elevation": {
+            "type": "number"
+          },
+          "utc_offset_seconds": {
+            "type": "integer"
+          },
+          "generationtime_ms": {
+            "type": "number"
+          }
+        }
+      },
+      "weather_current_weather": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string"
+          },
+          "winddirection": {
+            "type": "integer"
+          },
+          "windspeed": {
+            "type": "number"
+          },
+          "temperature": {
+            "type": "number"
+          },
+          "weathercode": {
+            "type": "integer"
+          }
+        },
+        "example": null
+      }
+    }
+  }
+}
