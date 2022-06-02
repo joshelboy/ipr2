@@ -5,7 +5,7 @@ var map = L.map('map').setView([41.143109, 0.238266], 2); //"Center" of the worl
 var pointList = [];
 var line;
 
-export async function render(){
+export function render(){
     try {
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
