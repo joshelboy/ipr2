@@ -1,4 +1,4 @@
-Teammitglieder: Elias Tilgant
+Teammitglieder: Benjamin Schäfer, Elias Tilegant
 
 ---
 
